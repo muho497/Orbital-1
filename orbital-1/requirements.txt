@@ -1,0 +1,18 @@
+# generate_dataset.py needs nothing beyond the standard library.
+# Everything else:
+
+numpy==1.26.2          # pinned: torch 2.1.2 was built against NumPy 1.x and
+                       # torch.from_numpy fails outright under NumPy 2.x
+torch==2.1.2
+torchvision==0.16.2
+ultralytics>=8.3
+open-clip-torch>=2.20  # screen_dataset.py
+Pillow>=10.0
+opencv-python>=4.8
+matplotlib>=3.7        # figure generators
+pyyaml>=6.0
+
+# quantise.py only
+onnx>=1.15
+onnxruntime>=1.17
+# tensorrt                # optional; install if you want engine timings

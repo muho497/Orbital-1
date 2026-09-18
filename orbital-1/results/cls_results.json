@@ -1,0 +1,136 @@
+{
+ "model": "yolo11s-cls.pt",
+ "imgsz": 384,
+ "batch": 48,
+ "epochs_requested": 30,
+ "epochs_run": 30,
+ "best_epoch": 30,
+ "train_minutes": 19.8,
+ "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+ "ultralytics": "8.4.147",
+ "torch": "2.1.2+cu121",
+ "n_train": 7144,
+ "n_val": 2038,
+ "n_test": 1018,
+ "val_top1": 0.6855,
+ "val_top5": 0.9598,
+ "test_top1": 0.6955,
+ "test_top5": 0.945,
+ "test_macro_precision": 0.6661,
+ "test_macro_recall": 0.6622,
+ "test_macro_f1": 0.6621,
+ "test_binary_damage_vs_nominal": {
+  "damage_recall": 0.9631,
+  "nominal_false_alarm_rate": 0.2067
+ },
+ "test_eval_seconds": 27.0,
+ "per_class": [
+  {
+   "class": "cfrp_delamination",
+   "support": 60,
+   "precision": 0.7419,
+   "recall": 0.7667,
+   "f1": 0.7541
+  },
+  {
+   "class": "crack_web",
+   "support": 80,
+   "precision": 0.7283,
+   "recall": 0.8375,
+   "f1": 0.7791
+  },
+  {
+   "class": "crater",
+   "support": 100,
+   "precision": 0.6,
+   "recall": 0.69,
+   "f1": 0.6419
+  },
+  {
+   "class": "debris_spray",
+   "support": 60,
+   "precision": 0.4035,
+   "recall": 0.3833,
+   "f1": 0.3932
+  },
+  {
+   "class": "melt_splash",
+   "support": 50,
+   "precision": 0.44,
+   "recall": 0.44,
+   "f1": 0.44
+  },
+  {
+   "class": "microcrater_field",
+   "support": 80,
+   "precision": 0.4675,
+   "recall": 0.45,
+   "f1": 0.4586
+  },
+  {
+   "class": "mli_damage",
+   "support": 100,
+   "precision": 0.9588,
+   "recall": 0.93,
+   "f1": 0.9442
+  },
+  {
+   "class": "nominal",
+   "support": 150,
+   "precision": 0.7881,
+   "recall": 0.7933,
+   "f1": 0.7907
+  },
+  {
+   "class": "perforation",
+   "support": 79,
+   "precision": 0.7213,
+   "recall": 0.557,
+   "f1": 0.6286
+  },
+  {
+   "class": "petaling",
+   "support": 59,
+   "precision": 0.9412,
+   "recall": 0.8136,
+   "f1": 0.8727
+  },
+  {
+   "class": "solar_damage",
+   "support": 100,
+   "precision": 0.8774,
+   "recall": 0.93,
+   "f1": 0.9029
+  },
+  {
+   "class": "spallation",
+   "support": 60,
+   "precision": 0.4,
+   "recall": 0.3667,
+   "f1": 0.3826
+  },
+  {
+   "class": "structural_severe",
+   "support": 40,
+   "precision": 0.5909,
+   "recall": 0.65,
+   "f1": 0.619
+  }
+ ],
+ "class_names": [
+  "cfrp_delamination",
+  "crack_web",
+  "crater",
+  "debris_spray",
+  "melt_splash",
+  "microcrater_field",
+  "mli_damage",
+  "nominal",
+  "perforation",
+  "petaling",
+  "solar_damage",
+  "spallation",
+  "structural_severe"
+ ],
+ "weights": "<WORKDIR>\\verify\\runs\\cls13_v1\\weights\\best.pt"
+}

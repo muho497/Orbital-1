@@ -1,0 +1,14 @@
+true\pred,cfrp_delamination,crack_web,crater,debris_spray,melt_splash,microcrater_field,mli_damage,nominal,perforation,petaling,solar_damage,spallation,structural_severe
+cfrp_delamination,46,3,0,1,0,3,0,0,1,1,0,4,1
+crack_web,2,67,3,0,1,1,0,2,1,0,3,0,0
+crater,2,1,69,6,3,2,0,3,6,0,0,8,0
+debris_spray,0,0,6,23,4,17,0,2,3,0,0,4,1
+melt_splash,0,4,6,1,22,8,0,1,0,0,0,4,4
+microcrater_field,1,2,8,11,8,36,0,5,2,1,0,5,1
+mli_damage,0,0,1,0,0,0,93,3,0,1,0,0,2
+nominal,1,1,4,1,1,4,2,119,0,0,10,3,4
+perforation,1,1,11,4,8,0,0,5,44,0,0,3,2
+petaling,0,5,0,0,1,1,0,1,2,48,0,0,1
+solar_damage,0,3,0,0,0,0,0,3,0,0,93,0,1
+spallation,7,4,5,10,2,3,0,4,2,0,0,22,1
+structural_severe,2,1,2,0,0,2,2,3,0,0,0,2,26

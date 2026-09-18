@@ -1,0 +1,14 @@
+class,support,precision,recall,f1
+cfrp_delamination,60,0.7419,0.7667,0.7541
+crack_web,80,0.7283,0.8375,0.7791
+crater,100,0.6,0.69,0.6419
+debris_spray,60,0.4035,0.3833,0.3932
+melt_splash,50,0.44,0.44,0.44
+microcrater_field,80,0.4675,0.45,0.4586
+mli_damage,100,0.9588,0.93,0.9442
+nominal,150,0.7881,0.7933,0.7907
+perforation,79,0.7213,0.557,0.6286
+petaling,59,0.9412,0.8136,0.8727
+solar_damage,100,0.8774,0.93,0.9029
+spallation,60,0.4,0.3667,0.3826
+structural_severe,40,0.5909,0.65,0.619

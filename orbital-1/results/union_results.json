@@ -1,0 +1,533 @@
+{
+ "config": {
+  "model": "yolo11s-cls.pt",
+  "imgsz": 384,
+  "batch": 48,
+  "epochs": 30,
+  "selective_classes": [
+   "crack_web",
+   "mli_damage"
+  ],
+  "v2_classes": [
+   "crack_web",
+   "crater",
+   "mli_damage",
+   "perforation",
+   "petaling",
+   "solar_damage",
+   "spallation"
+  ],
+  "build": {
+   "v2_test": 502,
+   "union_extra": 3598,
+   "sel_extra": 1260
+  },
+  "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER"
+ },
+ "models": {
+  "baseline_v1": {
+   "weights": "verify\\runs\\cls13_v1\\weights\\best.pt",
+   "train_images": 7144,
+   "train_minutes": null,
+   "v1_test": {
+    "n": 1018,
+    "top1": 0.6955,
+    "top5": 0.945,
+    "macro_f1": 0.6621,
+    "binary": {
+     "damage_recall": 0.9631,
+     "nominal_false_alarm_rate": 0.2067
+    },
+    "per_class": [
+     {
+      "class": "cfrp_delamination",
+      "support": 60,
+      "precision": 0.7419,
+      "recall": 0.7667,
+      "f1": 0.7541
+     },
+     {
+      "class": "crack_web",
+      "support": 80,
+      "precision": 0.7283,
+      "recall": 0.8375,
+      "f1": 0.7791
+     },
+     {
+      "class": "crater",
+      "support": 100,
+      "precision": 0.6,
+      "recall": 0.69,
+      "f1": 0.6419
+     },
+     {
+      "class": "debris_spray",
+      "support": 60,
+      "precision": 0.4035,
+      "recall": 0.3833,
+      "f1": 0.3932
+     },
+     {
+      "class": "melt_splash",
+      "support": 50,
+      "precision": 0.44,
+      "recall": 0.44,
+      "f1": 0.44
+     },
+     {
+      "class": "microcrater_field",
+      "support": 80,
+      "precision": 0.4675,
+      "recall": 0.45,
+      "f1": 0.4586
+     },
+     {
+      "class": "mli_damage",
+      "support": 100,
+      "precision": 0.9588,
+      "recall": 0.93,
+      "f1": 0.9442
+     },
+     {
+      "class": "nominal",
+      "support": 150,
+      "precision": 0.7881,
+      "recall": 0.7933,
+      "f1": 0.7907
+     },
+     {
+      "class": "perforation",
+      "support": 79,
+      "precision": 0.7213,
+      "recall": 0.557,
+      "f1": 0.6286
+     },
+     {
+      "class": "petaling",
+      "support": 59,
+      "precision": 0.9412,
+      "recall": 0.8136,
+      "f1": 0.8727
+     },
+     {
+      "class": "solar_damage",
+      "support": 100,
+      "precision": 0.8774,
+      "recall": 0.93,
+      "f1": 0.9029
+     },
+     {
+      "class": "spallation",
+      "support": 60,
+      "precision": 0.4,
+      "recall": 0.3667,
+      "f1": 0.3826
+     },
+     {
+      "class": "structural_severe",
+      "support": 40,
+      "precision": 0.5909,
+      "recall": 0.65,
+      "f1": 0.619
+     }
+    ]
+   },
+   "v2_test": {
+    "n": 502,
+    "top1": 0.5299,
+    "top5": 0.8865,
+    "macro_f1": 0.5909,
+    "binary": {},
+    "per_class": [
+     {
+      "class": "crack_web",
+      "support": 80,
+      "precision": 0.7582,
+      "recall": 0.8625,
+      "f1": 0.807
+     },
+     {
+      "class": "crater",
+      "support": 100,
+      "precision": 0.4,
+      "recall": 0.1,
+      "f1": 0.16
+     },
+     {
+      "class": "mli_damage",
+      "support": 100,
+      "precision": 0.9726,
+      "recall": 0.71,
+      "f1": 0.8208
+     },
+     {
+      "class": "perforation",
+      "support": 79,
+      "precision": 0.9062,
+      "recall": 0.3671,
+      "f1": 0.5225
+     },
+     {
+      "class": "petaling",
+      "support": 59,
+      "precision": 0.6588,
+      "recall": 0.9492,
+      "f1": 0.7778
+     },
+     {
+      "class": "solar_damage",
+      "support": 24,
+      "precision": 0.95,
+      "recall": 0.7917,
+      "f1": 0.8636
+     },
+     {
+      "class": "spallation",
+      "support": 60,
+      "precision": 0.1714,
+      "recall": 0.2,
+      "f1": 0.1846
+     }
+    ]
+   },
+   "v1_test_7class_macro_f1": 0.736,
+   "v2_test_7class_macro_f1": 0.5909
+  },
+  "union_all": {
+   "weights": "<WORKDIR>\\verify\\runs\\cls13_union_all\\weights\\best.pt",
+   "train_images": 10742,
+   "train_minutes": 16.6,
+   "v1_test": {
+    "n": 1018,
+    "top1": 0.6857,
+    "top5": 0.9568,
+    "macro_f1": 0.6546,
+    "binary": {
+     "damage_recall": 0.9781,
+     "nominal_false_alarm_rate": 0.2933
+    },
+    "per_class": [
+     {
+      "class": "cfrp_delamination",
+      "support": 60,
+      "precision": 0.8036,
+      "recall": 0.75,
+      "f1": 0.7759
+     },
+     {
+      "class": "crack_web",
+      "support": 80,
+      "precision": 0.7312,
+      "recall": 0.85,
+      "f1": 0.7861
+     },
+     {
+      "class": "crater",
+      "support": 100,
+      "precision": 0.6442,
+      "recall": 0.67,
+      "f1": 0.6569
+     },
+     {
+      "class": "debris_spray",
+      "support": 60,
+      "precision": 0.3684,
+      "recall": 0.35,
+      "f1": 0.359
+     },
+     {
+      "class": "melt_splash",
+      "support": 50,
+      "precision": 0.6,
+      "recall": 0.36,
+      "f1": 0.45
+     },
+     {
+      "class": "microcrater_field",
+      "support": 80,
+      "precision": 0.4337,
+      "recall": 0.45,
+      "f1": 0.4417
+     },
+     {
+      "class": "mli_damage",
+      "support": 100,
+      "precision": 0.9775,
+      "recall": 0.87,
+      "f1": 0.9206
+     },
+     {
+      "class": "nominal",
+      "support": 150,
+      "precision": 0.848,
+      "recall": 0.7067,
+      "f1": 0.7709
+     },
+     {
+      "class": "perforation",
+      "support": 79,
+      "precision": 0.625,
+      "recall": 0.6962,
+      "f1": 0.6587
+     },
+     {
+      "class": "petaling",
+      "support": 59,
+      "precision": 0.9231,
+      "recall": 0.8136,
+      "f1": 0.8649
+     },
+     {
+      "class": "solar_damage",
+      "support": 100,
+      "precision": 0.8051,
+      "recall": 0.95,
+      "f1": 0.8716
+     },
+     {
+      "class": "spallation",
+      "support": 60,
+      "precision": 0.3857,
+      "recall": 0.45,
+      "f1": 0.4154
+     },
+     {
+      "class": "structural_severe",
+      "support": 40,
+      "precision": 0.4717,
+      "recall": 0.625,
+      "f1": 0.5376
+     }
+    ]
+   },
+   "v2_test": {
+    "n": 502,
+    "top1": 0.8287,
+    "top5": 0.99,
+    "macro_f1": 0.8369,
+    "binary": {},
+    "per_class": [
+     {
+      "class": "crack_web",
+      "support": 80,
+      "precision": 0.8675,
+      "recall": 0.9,
+      "f1": 0.8834
+     },
+     {
+      "class": "crater",
+      "support": 100,
+      "precision": 0.8367,
+      "recall": 0.82,
+      "f1": 0.8283
+     },
+     {
+      "class": "mli_damage",
+      "support": 100,
+      "precision": 1.0,
+      "recall": 0.82,
+      "f1": 0.9011
+     },
+     {
+      "class": "perforation",
+      "support": 79,
+      "precision": 0.8171,
+      "recall": 0.8481,
+      "f1": 0.8323
+     },
+     {
+      "class": "petaling",
+      "support": 59,
+      "precision": 0.8529,
+      "recall": 0.9831,
+      "f1": 0.9134
+     },
+     {
+      "class": "solar_damage",
+      "support": 24,
+      "precision": 0.8889,
+      "recall": 1.0,
+      "f1": 0.9412
+     },
+     {
+      "class": "spallation",
+      "support": 60,
+      "precision": 0.6078,
+      "recall": 0.5167,
+      "f1": 0.5586
+     }
+    ]
+   },
+   "v1_test_7class_macro_f1": 0.7392,
+   "v2_test_7class_macro_f1": 0.8369
+  },
+  "selective": {
+   "weights": "<WORKDIR>\\verify\\runs\\cls13_selective\\weights\\best.pt",
+   "train_images": 8404,
+   "train_minutes": 22.8,
+   "v1_test": {
+    "n": 1018,
+    "top1": 0.6916,
+    "top5": 0.942,
+    "macro_f1": 0.6568,
+    "binary": {
+     "damage_recall": 0.9608,
+     "nominal_false_alarm_rate": 0.2067
+    },
+    "per_class": [
+     {
+      "class": "cfrp_delamination",
+      "support": 60,
+      "precision": 0.7313,
+      "recall": 0.8167,
+      "f1": 0.7717
+     },
+     {
+      "class": "crack_web",
+      "support": 80,
+      "precision": 0.6848,
+      "recall": 0.7875,
+      "f1": 0.7326
+     },
+     {
+      "class": "crater",
+      "support": 100,
+      "precision": 0.6569,
+      "recall": 0.67,
+      "f1": 0.6634
+     },
+     {
+      "class": "debris_spray",
+      "support": 60,
+      "precision": 0.4516,
+      "recall": 0.4667,
+      "f1": 0.459
+     },
+     {
+      "class": "melt_splash",
+      "support": 50,
+      "precision": 0.3556,
+      "recall": 0.32,
+      "f1": 0.3368
+     },
+     {
+      "class": "microcrater_field",
+      "support": 80,
+      "precision": 0.4521,
+      "recall": 0.4125,
+      "f1": 0.4314
+     },
+     {
+      "class": "mli_damage",
+      "support": 100,
+      "precision": 0.9574,
+      "recall": 0.9,
+      "f1": 0.9278
+     },
+     {
+      "class": "nominal",
+      "support": 150,
+      "precision": 0.7778,
+      "recall": 0.7933,
+      "f1": 0.7855
+     },
+     {
+      "class": "perforation",
+      "support": 79,
+      "precision": 0.6901,
+      "recall": 0.6203,
+      "f1": 0.6533
+     },
+     {
+      "class": "petaling",
+      "support": 59,
+      "precision": 0.9423,
+      "recall": 0.8305,
+      "f1": 0.8829
+     },
+     {
+      "class": "solar_damage",
+      "support": 100,
+      "precision": 0.8333,
+      "recall": 0.95,
+      "f1": 0.8879
+     },
+     {
+      "class": "spallation",
+      "support": 60,
+      "precision": 0.3818,
+      "recall": 0.35,
+      "f1": 0.3652
+     },
+     {
+      "class": "structural_severe",
+      "support": 40,
+      "precision": 0.6579,
+      "recall": 0.625,
+      "f1": 0.641
+     }
+    ]
+   },
+   "v2_test": {
+    "n": 502,
+    "top1": 0.5578,
+    "top5": 0.8506,
+    "macro_f1": 0.5731,
+    "binary": {},
+    "per_class": [
+     {
+      "class": "crack_web",
+      "support": 80,
+      "precision": 0.6303,
+      "recall": 0.9375,
+      "f1": 0.7538
+     },
+     {
+      "class": "crater",
+      "support": 100,
+      "precision": 0.2857,
+      "recall": 0.04,
+      "f1": 0.0702
+     },
+     {
+      "class": "mli_damage",
+      "support": 100,
+      "precision": 0.7424,
+      "recall": 0.98,
+      "f1": 0.8448
+     },
+     {
+      "class": "perforation",
+      "support": 79,
+      "precision": 0.871,
+      "recall": 0.3418,
+      "f1": 0.4909
+     },
+     {
+      "class": "petaling",
+      "support": 59,
+      "precision": 0.9286,
+      "recall": 0.8814,
+      "f1": 0.9043
+     },
+     {
+      "class": "solar_damage",
+      "support": 24,
+      "precision": 1.0,
+      "recall": 0.7083,
+      "f1": 0.8293
+     },
+     {
+      "class": "spallation",
+      "support": 60,
+      "precision": 0.1207,
+      "recall": 0.1167,
+      "f1": 0.1186
+     }
+    ]
+   },
+   "v1_test_7class_macro_f1": 0.7304,
+   "v2_test_7class_macro_f1": 0.5731
+  }
+ }
+}

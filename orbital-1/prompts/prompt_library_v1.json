@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "project": "ORBITAL-1 / Vision-Based On-Board Diagnostics for Hypervelocity Impact Characterization (IAC 2026)",
+    "generator": "SDXL (ComfyUI / Automatic1111)",
+    "resolution": "1024x1024",
+    "cfg_range": [
+      4.5,
+      6.5
+    ],
+    "steps_range": [
+      30,
+      40
+    ],
+    "samplers": [
+      "DPM++ 2M Karras",
+      "Euler a"
+    ],
+    "assembly_template": "{base_positive}, {surface}, {damage_core}, {severity}, {lighting}, {camera}, {background}",
+    "negative_template": "{global_negative}, {class_negative_extra}",
+    "base_positive": "RAW photo, high-resolution on-board inspection camera photograph of a satellite exterior surface in orbit, (photorealistic:1.2), extremely detailed metal surface texture, physically accurate impact damage, hard vacuum environment, sharp focus, 8k",
+    "global_negative": "(cartoon:1.3), anime, illustration, painting, drawing, sketch, watercolor, (3d render:1.2), cgi, video game, concept art, stylized, low quality, worst quality, lowres, jpeg artifacts, watermark, (text:1.3), caption, logo, signature, blurry, out of focus, deformed geometry, fantasy spaceship, retro sci-fi, (people:1.2), person, astronaut, hands, face, (fire:1.4), (flames:1.4), (smoke:1.4), explosion, sparks, burning, glowing embers, rust, corrosion, water droplets, rain, dust cloud, fog, haze, terrain, trees, buildings, oversaturated, neon colors",
+    "note": "Vacuum physics: no fire, smoke, flames or rust in orbit; keep them high-weight in the negative prompt. Vary the seed on every image."
+  },
+  "damage_classes": [
+    {
+      "class_id": 0,
+      "label": "crater",
+      "en_name": "Non-penetrating hemispherical crater",
+      "positive_core": "(hemispherical hypervelocity impact crater:1.3) on satellite panel, raised curled molten rim lips, smooth bowl-shaped cavity, bright exposed bare metal inside crater, faint radial ejecta spray marks around rim, no penetration, intact surrounding surface",
+      "severity": {
+        "minor": "single tiny impact crater, sub-millimeter pit, barely raised rim",
+        "moderate": "distinct 5 mm hemispherical crater, pronounced molten lip, small ejecta ring",
+        "severe": "large deep crater with wide melted rim, cracked coating ring around cavity, near-marginal penetration bulge"
+      },
+      "negative_extra": "through hole, penetration, light shining through, torn petals, radial crack network, shattered glass, spall, cluster of pits",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_radiator",
+        "surf_whipple",
+        "surf_sensor",
+        "surf_antenna"
+      ],
+      "target_count": 1000
+    },
+    {
+      "class_id": 1,
+      "label": "perforation",
+      "en_name": "Clean through-hole perforation",
+      "positive_core": "(clean circular perforation hole:1.35) punched through satellite panel by hypervelocity impact, everted molten rim, dark void visible through the hole, resolidified metal droplets near edge, hole slightly larger than projectile diameter, ballistic penetration",
+      "severity": {
+        "minor": "1 mm pinhole perforation, thin bright rim",
+        "moderate": "5 mm round through-hole, everted molten lip, faint ejecta stain",
+        "severe": "20 mm ragged through-hole, deformed bulged panel around opening, torn coating"
+      },
+      "negative_extra": "shallow crater, closed cavity, intact back surface, bent petals, spider-web cracks, torn fabric, multiple pits",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_radiator",
+        "surf_antenna",
+        "surf_sensor",
+        "surf_whipple"
+      ],
+      "target_count": 800
+    },
+    {
+      "class_id": 2,
+      "label": "petaling",
+      "en_name": "Petal rupture (thin sheet)",
+      "positive_core": "hypervelocity perforation with (petaling deformation:1.35), four to six jagged triangular metal petals bent outward around a central hole, torn thin aluminum sheet, bright fractured petal edges, hole visible between petals",
+      "severity": {
+        "minor": "small hole with slightly lifted petal edges",
+        "moderate": "clear petaled rupture, curled triangular flaps",
+        "severe": "large petaled breach with twisted torn flaps, surrounding sheet buckling"
+      },
+      "negative_extra": "smooth round hole, clean rim, hemispherical crater, shattered glass, honeycomb core, melt droplets only",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_antenna",
+        "surf_mli",
+        "surf_whipple"
+      ],
+      "target_count": 600
+    },
+    {
+      "class_id": 3,
+      "label": "spallation",
+      "en_name": "Rear-face spall",
+      "positive_core": "(rear-face spallation damage:1.35) on satellite structural wall, circular patch of detached material, rough granular fracture surface, raised fractured ring edge, no through hole, shock-induced spall zone wider than the front crater",
+      "severity": {
+        "minor": "incipient spall, small blistered detachment",
+        "moderate": "clear detached spall disc, rough crater-free fracture patch",
+        "severe": "large deep spall zone, hanging partially attached fragment, bulged wall"
+      },
+      "negative_extra": "through hole, light through hole, front-face molten crater rim, petals, glass cracks, foil tear",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_cfrp"
+      ],
+      "target_count": 600
+    },
+    {
+      "class_id": 4,
+      "label": "crack_web",
+      "en_name": "Radial/concentric crack network (brittle surface)",
+      "positive_core": "hypervelocity impact on brittle glass surface of satellite, (central pit with radial cracks:1.3) and concentric ring cracks, spider-web conchoidal fracture pattern, fine crack network catching the light, fractured but retained pane",
+      "severity": {
+        "minor": "tiny pit with three short hairline radial cracks",
+        "moderate": "pronounced star-shaped crack pattern with two ring cracks",
+        "severe": "dense shattered crack web, crushed central zone, missing small glass chips"
+      },
+      "negative_extra": "metal crater, molten rim, through hole, petals, torn foil, honeycomb, melted droplets",
+      "compatible_surfaces": [
+        "surf_sensor",
+        "surf_radiator"
+      ],
+      "target_count": 800
+    },
+    {
+      "class_id": 5,
+      "label": "mli_damage",
+      "en_name": "Multi-layer insulation blanket damage",
+      "positive_core": "(torn multi-layer insulation blanket:1.3) on satellite, gold kapton foil with hypervelocity puncture, curled melted foil edges, exposed inner silver mylar layers, wrinkled crinkled thermal blanket around damage, dark hole through the layered foil stack",
+      "severity": {
+        "minor": "small puncture in outer kapton layer only, pinhole with curled edge",
+        "moderate": "torn opening through several foil layers, silver layers visible",
+        "severe": "large ripped MLI flap hanging stiffly, full stack breach, exposed structure beneath"
+      },
+      "negative_extra": "rigid metal crater, molten aluminum rim, glass cracks, solar cells, smooth painted panel, honeycomb core",
+      "compatible_surfaces": [
+        "surf_mli"
+      ],
+      "target_count": 1000
+    },
+    {
+      "class_id": 6,
+      "label": "solar_damage",
+      "en_name": "Solar array / cell damage",
+      "positive_core": "hypervelocity impact damage on satellite solar array, (shattered solar cell cover glass:1.3), radial and concentric cracks spreading across dark blue photovoltaic cells, missing glass shards exposing dark silicon, broken silver gridlines, central penetration pit, adjacent intact cells with regular grid pattern",
+      "severity": {
+        "minor": "single cracked cover glass on one cell, hairline fracture star",
+        "moderate": "two or three shattered cells, chipped glass, cracked neighbors",
+        "severe": "wide shattered damage zone across the array, hole through the panel substrate, dangling cell fragments"
+      },
+      "negative_extra": "metal crater only, torn gold foil, petals, honeycomb core, white radiator tiles",
+      "compatible_surfaces": [
+        "surf_solar"
+      ],
+      "target_count": 1000
+    },
+    {
+      "class_id": 7,
+      "label": "debris_spray",
+      "en_name": "Secondary debris-cloud spray (Whipple rear wall)",
+      "positive_core": "(debris cloud impact spray pattern:1.35) on satellite rear wall behind Whipple shield, hundreds of small clustered craters and pits, dense central damage cluster with annular halo ring of fine pits, shotgun-like spray of micro craters, bulged but unperforated wall",
+      "severity": {
+        "minor": "sparse spray of shallow pits, faint central cluster",
+        "moderate": "distinct central cluster and halo ring of small craters",
+        "severe": "dense overlapping crater cluster, several small perforations at center, deformed wall"
+      },
+      "negative_extra": "single large crater, one clean round hole, glass crack web, torn blanket, petals",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_whipple"
+      ],
+      "target_count": 600
+    },
+    {
+      "class_id": 8,
+      "label": "cfrp_delamination",
+      "en_name": "Composite delamination and fiber breakout",
+      "positive_core": "hypervelocity impact on (carbon fiber composite satellite panel:1.2), (delamination with fiber breakout:1.3), frayed broken carbon fibers around a ragged hole, separated composite plies lifting at the edges, dull black woven twill texture, crushed resin fragments",
+      "severity": {
+        "minor": "small surface delamination blister, few lifted fibers",
+        "moderate": "ragged hole with frayed fiber ring, visible ply separation",
+        "severe": "wide delaminated zone, splayed broken fiber bundles, rear-face breakout larger than entry"
+      },
+      "negative_extra": "shiny aluminum, molten metal rim, glass cracks, gold foil, white paint, honeycomb cells",
+      "compatible_surfaces": [
+        "surf_cfrp"
+      ],
+      "target_count": 600
+    },
+    {
+      "class_id": 9,
+      "label": "microcrater_field",
+      "en_name": "Distributed micro-crater field (cumulative MMOD erosion)",
+      "positive_core": "satellite surface with (field of scattered micrometeoroid impact pits:1.3), dozens of sub-millimeter microcraters randomly distributed, sandblasted eroded thermal coating, tiny bright pits in the paint, long-duration space exposure weathering",
+      "severity": {
+        "minor": "a few faint scattered micro pits",
+        "moderate": "dozens of visible micro craters, dulled eroded coating",
+        "severe": "dense pitting across the whole surface, chipped coating patches, one or two larger pits"
+      },
+      "negative_extra": "single large crater, through hole, crack network, torn blanket, clustered central spray pattern",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_mli",
+        "surf_radiator",
+        "surf_antenna",
+        "surf_whipple"
+      ],
+      "target_count": 800
+    },
+    {
+      "class_id": 10,
+      "label": "melt_splash",
+      "en_name": "Melt splash and ejecta deposit",
+      "positive_core": "impact melt splash residue on satellite panel, (dark radial star-shaped ejecta deposit:1.3) around a small central pit, resolidified metal droplets sprayed outward, thin-film discoloration ring, vacuum-deposited stain pattern",
+      "severity": {
+        "minor": "faint discoloration halo around a tiny pit",
+        "moderate": "clear star-shaped dark deposit with radial rays",
+        "severe": "wide splattered melt deposit, thick droplet trails, discolored zone spanning the panel"
+      },
+      "negative_extra": "flames, burning, soot cloud, glowing hot metal, large hole, crack web, torn foil",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_radiator",
+        "surf_sensor",
+        "surf_whipple"
+      ],
+      "target_count": 500
+    },
+    {
+      "class_id": 11,
+      "label": "structural_severe",
+      "en_name": "Severe structural damage (catastrophic)",
+      "positive_core": "(catastrophic hypervelocity impact damage:1.3) on satellite structure, torn aluminum honeycomb sandwich panel, exposed hexagonal core cells, ripped and buckled facesheet, twisted structural fragments, large ragged breach, severed harness wires floating stiffly in microgravity",
+      "severity": {
+        "moderate": "partial facesheet tear, exposed honeycomb patch, bent edge",
+        "severe": "large breach through the sandwich panel, splayed core, hanging fragments",
+        "catastrophic": "massive structural rupture, detached panel section, torn structure and loose stiff cables"
+      },
+      "negative_extra": "tiny pit, minor scratch, pristine intact panel, small pinhole, single small crater, one clean round hole only, spider-web glass cracks, fire glow, smoke plume, explosion flash",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_radiator",
+        "surf_cfrp",
+        "surf_mli"
+      ],
+      "target_count": 400
+    },
+    {
+      "class_id": 12,
+      "label": "nominal",
+      "en_name": "Undamaged reference (control class)",
+      "positive_core": "pristine undamaged satellite exterior surface, clean uniform thermal coating, intact fasteners and seams, factory-fresh spacecraft hardware in orbit, flawless panel",
+      "severity": {
+        "none": ""
+      },
+      "negative_extra": "(crater:1.4), (hole:1.4), (crack:1.4), (tear:1.3), (dent:1.3), scratch, pit, puncture, damage, debris, deformation, stain, discoloration",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_mli",
+        "surf_solar",
+        "surf_radiator",
+        "surf_antenna",
+        "surf_cfrp",
+        "surf_whipple",
+        "surf_sensor",
+        "surf_harness"
+      ],
+      "target_count": 1500
+    }
+  ],
+  "surfaces": {
+    "surf_al_panel": "white-painted aluminum honeycomb satellite bus panel, visible rivets and fasteners, matte thermal control coating",
+    "surf_mli": "gold kapton multi-layer insulation blanket, wrinkled reflective foil, stitched seams and grounding tabs",
+    "surf_solar": "satellite solar array wing, grid of dark blue photovoltaic cells with thin silver gridlines under cover glass, white backing substrate",
+    "surf_radiator": "white optical solar reflector radiator panel, mirror-like quartz tiles arranged in a grid",
+    "surf_antenna": "parabolic high-gain antenna dish, smooth pale composite reflector surface",
+    "surf_cfrp": "bare carbon fiber composite panel, woven twill texture, satin black finish",
+    "surf_whipple": "thin aluminum Whipple shield bumper plate with standoff gap to the main wall visible at the edge",
+    "surf_sensor": "star tracker housing with black anodized baffle and round glass aperture",
+    "surf_harness": "kapton-wrapped cable harness bundle with connectors routed along the satellite edge"
+  },
+  "lighting": {
+    "light_direct": "harsh direct unfiltered sunlight, extreme contrast, pitch-black hard-edged shadows, no atmospheric scattering, blown specular highlights on bare metal",
+    "light_grazing": "grazing low-angle sunlight raking across the surface, terminator lighting, long shadows inside craters and pits emphasizing depth relief",
+    "light_led": "eclipse darkness illuminated by a cool white LED inspection lamp, small specular hotspot, vignetted pool of light, surrounding pitch blackness",
+    "light_albedo": "soft bluish fill light reflected from Earth below, gentle earthshine illumination lifting the shadows",
+    "light_glint": "strong specular sun glint reflecting off metallic foil, high dynamic range, bright star-shaped reflection near the damage"
+  },
+  "camera": {
+    "cam_macro": "extreme macro close-up at millimeter scale, fine metal grain visible, flat perspective, deep depth of field",
+    "cam_inspect": "inspection camera view from half a meter, damage centered in frame, slight wide-angle perspective",
+    "cam_survey": "survey view from three meters showing a full panel section, damage visible among hardware features, slight barrel distortion from a wide lens",
+    "cam_oblique": "oblique 45-degree viewing angle across the surface, foreshortened perspective on the damage"
+  },
+  "backgrounds": {
+    "bg_space": "pure black deep space background, no visible stars, short exposure",
+    "bg_earth": "blue Earth limb with white cloud swirls curving far in the background, slightly out of focus",
+    "bg_stars": "faint scattered star field in the black background, long exposure",
+    "bg_structure": "other satellite structures blurred in the background, truss segments and foil-wrapped shapes"
+  },
+  "dataset_plan": {
+    "total_images": 10200,
+    "split": {
+      "train": 0.7,
+      "val": 0.2,
+      "test": 0.1
+    },
+    "diversity_rule": "cross lighting x camera x background x severity within each class; no single combination above 15% of a class; unique seed per image",
+    "real_data_note": "Mix real imagery (NASA LDEF crater archive, returned Hubble array photos, Sentinel-1A damage image, ISS inspection photos) into val/test to measure the sim-to-real gap",
+    "augmentation": [
+      "GaussNoise",
+      "ISONoise",
+      "salt-pepper hot pixels",
+      "MotionBlur",
+      "exposure jitter",
+      "ImageCompression"
+    ]
+  }
+}

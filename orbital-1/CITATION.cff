@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: ORBITAL-1 — synthetic training data for hypervelocity impact characterisation
+message: If you use this software or data, please cite the conference paper.
+type: software
+authors:
+  - family-names: Aslan
+    given-names: Muhammet
+    email: muhammetaslan.ai@gmail.com
+    affiliation: Nexus Apex
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: "Vision-Based On-Board Diagnostics for Hypervelocity Impact Characterization: A Generative Synthetic Data Approach with Edge-Deployable Object Detection"
+  authors:
+    - family-names: Aslan
+      given-names: Muhammet
+      affiliation: Nexus Apex
+  collection-title: Proceedings of the 77th International Astronautical Congress (IAC)
+  location:
+    name: Antalya, Türkiye
+  year: 2026
+  notes: IAC-26-A6.3

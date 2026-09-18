@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "project": "ORBITAL-1 / Vision-Based On-Board Diagnostics for Hypervelocity Impact Characterization (IAC 2026)",
+    "generator": "SDXL (ComfyUI / Automatic1111)",
+    "resolution": "1024x1024",
+    "cfg_range": [
+      4.5,
+      6.5
+    ],
+    "steps_range": [
+      30,
+      40
+    ],
+    "samplers": [
+      "DPM++ 2M Karras",
+      "Euler a"
+    ],
+    "revision": "v2 (2026-09-03) - micro / near-micro framing doctrine: the damage feature is the ONLY subject, centered, filling most of the frame; wide shots, full panels and whole-spacecraft scenes are explicitly negated. Filenames use the same seeds as v1, so ALWAYS generate into a fresh output folder.",
+    "assembly_template": "{base_positive}, {surface}, {damage_core}, {severity}, {lighting}, {camera}, {background}",
+    "negative_template": "{global_negative}, {class_negative_extra}",
+    "base_positive": "RAW photo, (extreme macro close-up photograph:1.3) of a satellite exterior surface, taken by an on-board inspection camera only a few centimeters from the surface, (the surface fills the entire frame edge to edge:1.3), one single subject perfectly centered in the frame, (photorealistic:1.2), extremely detailed material microtexture, physically accurate detail, hard vacuum environment, razor sharp focus, high magnification, 8k",
+    "global_negative": "(wide shot:1.4), (zoomed out:1.4), (whole spacecraft:1.4), (full satellite:1.4), entire panel visible, distant view, far away camera, aerial view, orbit view, spacecraft silhouette, (Earth in background:1.3), planet, horizon, (terrain:1.3), lunar surface, ground, landscape, starfield panorama, (cartoon:1.3), anime, illustration, painting, drawing, sketch, watercolor, (3d render:1.2), cgi, video game, concept art, stylized, low quality, worst quality, lowres, jpeg artifacts, watermark, (text:1.3), caption, logo, signature, blurry, out of focus, deformed geometry, fantasy spaceship, retro sci-fi, (people:1.2), person, astronaut, hands, face, (fire:1.4), (flames:1.4), (smoke:1.4), explosion, sparks, burning, glowing embers, rust, corrosion, water droplets, rain, dust cloud, fog, haze, trees, buildings, oversaturated, neon colors",
+    "note": "v2 framing doctrine: every image is an extreme close-up at micro or near-micro scale. The damage is the only subject, centered, occupying most of the frame; only the damaged area and its immediately surrounding surface may be visible. No full panels, no whole spacecraft, no scenery, no visible planet or terrain. Vacuum physics: no fire, smoke, flames or rust in orbit; keep them high-weight in the negative prompt. Vary the seed on every image."
+  },
+  "damage_classes": [
+    {
+      "class_id": 0,
+      "label": "crater",
+      "en_name": "Non-penetrating hemispherical crater",
+      "positive_core": "(a single hemispherical hypervelocity impact crater:1.45) as the only subject, perfectly centered, (the crater fills most of the frame:1.35), raised curled molten rim lips in razor sharp detail, smooth bowl-shaped cavity, bright exposed bare metal inside the crater, fine radial ejecta spray marks immediately around the rim, no penetration, only the crater and its immediate rim visible, nothing else in the frame",
+      "severity": {
+        "minor": "tiny sub-millimeter crater imaged at very high magnification so it still spans about one third of the frame, barely raised rim",
+        "moderate": "5 mm hemispherical crater imaged up close, spanning about half of the frame, pronounced molten lip, thin ejecta ring",
+        "severe": "large deep crater spanning about two thirds of the frame, wide melted rim, ring of cracked coating around the cavity, near-marginal penetration bulge"
+      },
+      "negative_extra": "through hole, penetration, light shining through, torn petals, radial crack network, shattered glass, spall, cluster of pits, second crater, multiple craters, crater small in frame",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_radiator",
+        "surf_whipple",
+        "surf_sensor",
+        "surf_antenna"
+      ],
+      "target_count": 1000
+    },
+    {
+      "class_id": 1,
+      "label": "perforation",
+      "en_name": "Clean through-hole perforation",
+      "positive_core": "(a single clean circular perforation hole punched through the panel:1.45) as the only subject, perfectly centered, (the hole fills a large part of the frame:1.35), everted molten rim lip in razor sharp detail, pitch black void visible through the hole, resolidified metal droplets on the rim, ballistic penetration, only the hole and its immediate rim visible, nothing else in the frame",
+      "severity": {
+        "minor": "1 mm pinhole imaged at very high magnification so the hole spans about one third of the frame, thin bright rim",
+        "moderate": "5 mm round through-hole imaged up close, spanning about half of the frame, everted molten lip, faint ejecta stain on the rim",
+        "severe": "20 mm ragged through-hole spanning about two thirds of the frame, deformed bulged metal around the opening, torn coating at the rim"
+      },
+      "negative_extra": "shallow crater, closed cavity, intact back surface, bent petals, spider-web cracks, torn fabric, multiple pits, second hole, multiple holes, hole small in frame",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_radiator",
+        "surf_antenna",
+        "surf_sensor",
+        "surf_whipple"
+      ],
+      "target_count": 800
+    },
+    {
+      "class_id": 2,
+      "label": "petaling",
+      "en_name": "Petal rupture (thin sheet)",
+      "positive_core": "(a single petaling rupture with four to six jagged triangular metal petals bent outward:1.45) around one central hole, the petaled hole is the only subject, perfectly centered, (the petals fill most of the frame:1.3), torn thin aluminum sheet, bright fractured petal edges in razor sharp detail, dark hole visible between the petals, only the petaled rupture visible, nothing else in the frame",
+      "severity": {
+        "minor": "small petaled hole imaged at high magnification, petals spanning about one third of the frame, slightly lifted petal edges",
+        "moderate": "clear petaled rupture spanning about half of the frame, curled triangular flaps sharply resolved",
+        "severe": "large petaled breach spanning most of the frame, twisted torn flaps, buckled sheet immediately around the petals"
+      },
+      "negative_extra": "smooth round hole, clean rim, hemispherical crater, shattered glass, honeycomb core, melt droplets only, multiple separate holes, second rupture, rupture small in frame",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_antenna",
+        "surf_mli",
+        "surf_whipple"
+      ],
+      "target_count": 600
+    },
+    {
+      "class_id": 3,
+      "label": "spallation",
+      "en_name": "Rear-face spall",
+      "positive_core": "(a single circular rear-face spallation patch:1.45) as the only subject, perfectly centered, (the spall zone fills most of the frame:1.3), detached material disc, rough granular fracture surface texture in razor sharp detail, raised fractured ring edge, no through hole, shock-induced spall, only the spall patch and its immediate edge visible, nothing else in the frame",
+      "severity": {
+        "minor": "incipient spall blister imaged at high magnification, spanning about one third of the frame, small detachment",
+        "moderate": "clear detached spall disc spanning about half of the frame, rough fracture patch sharply resolved",
+        "severe": "large deep spall zone spanning most of the frame, partially attached hanging fragment, bulged wall"
+      },
+      "negative_extra": "through hole, light through hole, front-face molten crater rim, petals, glass cracks, foil tear, multiple spall patches, second spall, spall small in frame",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_cfrp"
+      ],
+      "target_count": 600
+    },
+    {
+      "class_id": 4,
+      "label": "crack_web",
+      "en_name": "Radial/concentric crack network (brittle surface)",
+      "positive_core": "(a single central impact pit with radial cracks and concentric ring cracks:1.45) in brittle glass, the crack web is the only subject, perfectly centered, (the crack pattern spans the entire frame:1.3), spider-web conchoidal fracture pattern in razor sharp detail, fine crack lines catching the light, fractured but retained pane, only the cracked glass surface visible, nothing else in the frame",
+      "severity": {
+        "minor": "tiny central pit at very high magnification with three short hairline radial cracks reaching toward the frame edges",
+        "moderate": "pronounced star-shaped crack pattern with two concentric ring cracks spanning the frame",
+        "severe": "dense shattered crack web filling the entire frame, crushed central zone, small missing glass chips"
+      },
+      "negative_extra": "metal crater, molten rim, through hole, petals, torn foil, honeycomb, melted droplets, second impact site, cracks small in frame",
+      "compatible_surfaces": [
+        "surf_sensor",
+        "surf_radiator"
+      ],
+      "target_count": 800
+    },
+    {
+      "class_id": 5,
+      "label": "mli_damage",
+      "en_name": "Multi-layer insulation blanket damage",
+      "positive_core": "(a single hypervelocity puncture torn through gold kapton multi-layer insulation foil:1.45) as the only subject, perfectly centered, (the torn hole fills a large part of the frame:1.3), curled melted foil edges in razor sharp detail, exposed inner silver mylar layers clearly visible inside the tear, wrinkled foil immediately around the hole, dark opening through the layered foil stack, only the tear and the foil right around it visible, nothing else in the frame",
+      "severity": {
+        "minor": "small puncture in the outer kapton layer only, imaged at high magnification so the pinhole and its curled edge span about one third of the frame",
+        "moderate": "torn opening through several foil layers spanning about half of the frame, silver inner layers clearly visible",
+        "severe": "large ripped MLI opening spanning most of the frame, stiffly hanging foil flap, full stack breach, dark structure visible beneath"
+      },
+      "negative_extra": "rigid metal crater, molten aluminum rim, glass cracks, solar cells, smooth painted panel, honeycomb core, multiple separate tears, second puncture, tear small in frame, whole blanket visible",
+      "compatible_surfaces": [
+        "surf_mli"
+      ],
+      "target_count": 1000
+    },
+    {
+      "class_id": 6,
+      "label": "solar_damage",
+      "en_name": "Solar array / cell damage",
+      "positive_core": "(a single shattered hypervelocity impact site on a solar cell:1.45) as the only subject, perfectly centered, (the shattered zone fills most of the frame:1.3), radial and concentric cracks through the cell cover glass in razor sharp detail, missing glass shards exposing dark silicon, broken thin silver gridlines, central penetration pit clearly visible, only the damaged cell surface visible, at most the edge of one neighboring cell at the frame border",
+      "severity": {
+        "minor": "hairline fracture star in the cover glass, imaged at high magnification so the crack star spans about one third of the frame",
+        "moderate": "shattered cover glass zone spanning about half of the frame, chipped glass, cracks running toward the frame edge",
+        "severe": "heavily shattered zone filling most of the frame, hole through the cell, dangling glass fragments"
+      },
+      "negative_extra": "metal crater only, torn gold foil, petals, honeycomb core, white radiator tiles, full solar array wing, rows of many intact cells, whole panel visible, damage small in frame",
+      "compatible_surfaces": [
+        "surf_solar"
+      ],
+      "target_count": 1000
+    },
+    {
+      "class_id": 7,
+      "label": "debris_spray",
+      "en_name": "Secondary debris-cloud spray (Whipple rear wall)",
+      "positive_core": "(a dense cluster of dozens of small hypervelocity craters and pits:1.45) from a secondary debris cloud, the crater cluster is the only subject and (fills the entire frame:1.3), dense central damage zone with an annular halo ring of fine pits, shotgun-like spray pattern, every small crater sharply resolved at high magnification, bulged but unperforated wall, only the sprayed surface visible, nothing else in the frame",
+      "severity": {
+        "minor": "sparse spray of shallow pits across the frame, faint denser cluster at the center",
+        "moderate": "distinct dense central crater cluster with an annular halo ring of small pits filling the frame",
+        "severe": "dense overlapping crater cluster filling the entire frame, several small perforations at the center, deformed surface"
+      },
+      "negative_extra": "single large crater, one clean round hole, glass crack web, torn blanket, petals, pits small and barely visible, distant wall",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_whipple"
+      ],
+      "target_count": 600
+    },
+    {
+      "class_id": 8,
+      "label": "cfrp_delamination",
+      "en_name": "Composite delamination and fiber breakout",
+      "positive_core": "(a single ragged impact hole with delamination and fiber breakout:1.45) in carbon fiber composite laminate as the only subject, perfectly centered, (the damage fills most of the frame:1.3), frayed broken carbon fiber bundles in razor sharp detail, separated composite plies lifting at the edges, crushed resin fragments, dull black woven twill texture immediately around the damage, only the delaminated zone visible, nothing else in the frame",
+      "severity": {
+        "minor": "small surface delamination blister spanning about one third of the frame, a few lifted frayed fibers",
+        "moderate": "ragged hole with a frayed fiber ring spanning about half of the frame, visible ply separation at the edges",
+        "severe": "wide delaminated zone filling most of the frame, splayed broken fiber bundles, lifted plies, rear breakout wider than the entry"
+      },
+      "negative_extra": "shiny aluminum, molten metal rim, glass cracks, gold foil, white paint, honeycomb cells, second impact hole, damage small in frame",
+      "compatible_surfaces": [
+        "surf_cfrp"
+      ],
+      "target_count": 600
+    },
+    {
+      "class_id": 9,
+      "label": "microcrater_field",
+      "en_name": "Distributed micro-crater field (cumulative MMOD erosion)",
+      "positive_core": "(a field of many scattered sub-millimeter micrometeoroid impact pits:1.4) covering the surface, imaged at high magnification so every tiny pit is clearly and sharply resolved, sandblasted eroded thermal coating texture filling the entire frame, small bright pits in the paint, long-duration space exposure erosion, no single dominant crater, only the pitted surface visible, nothing else in the frame",
+      "severity": {
+        "minor": "a few faint scattered micro pits, each still clearly resolved at high magnification",
+        "moderate": "dozens of clearly resolved micro craters spread across the frame, dulled eroded coating",
+        "severe": "dense pitting covering the entire frame, chipped coating patches, one or two larger pits among the field"
+      },
+      "negative_extra": "single large crater, through hole, crack network, torn blanket, clustered central spray pattern, pits invisible, surface seen from afar",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_mli",
+        "surf_radiator",
+        "surf_antenna",
+        "surf_whipple"
+      ],
+      "target_count": 800
+    },
+    {
+      "class_id": 10,
+      "label": "melt_splash",
+      "en_name": "Melt splash and ejecta deposit",
+      "positive_core": "(a single dark star-shaped melt splash deposit:1.45) around a small central pit as the only subject, perfectly centered, (the splash pattern fills most of the frame:1.3), radial rays of resolidified metal droplets in razor sharp detail, thin-film discoloration ring, vacuum-deposited stain pattern, only the splash deposit and its central pit visible, nothing else in the frame",
+      "severity": {
+        "minor": "faint discoloration halo and thin radial rays around a tiny central pit, deposit spanning about one third of the frame",
+        "moderate": "clear dark star-shaped deposit with radial droplet rays spanning about half of the frame",
+        "severe": "wide splattered melt deposit filling most of the frame, thick droplet trails, strong discoloration zone"
+      },
+      "negative_extra": "flames, burning, soot cloud, glowing hot metal, large hole, crack web, torn foil, second splash site, stain faint and small in frame",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_radiator",
+        "surf_sensor",
+        "surf_whipple"
+      ],
+      "target_count": 500
+    },
+    {
+      "class_id": 11,
+      "label": "structural_severe",
+      "en_name": "Severe structural damage (catastrophic)",
+      "positive_core": "(catastrophic hypervelocity impact breach:1.4) seen from very close, the torn breach is the only subject and (fills the entire frame:1.3), ripped aluminum honeycomb sandwich panel with exposed hexagonal core cells in razor sharp detail, buckled torn facesheet edges, twisted metal fragments, severed stiff harness wires crossing the frame, camera close to the damage, no full spacecraft visible, only the breach and its torn edges in the frame",
+      "severity": {
+        "moderate": "partial facesheet tear filling the frame, exposed honeycomb core patch sharply resolved, bent metal edge",
+        "severe": "large breach through the sandwich panel filling the entire frame, splayed honeycomb core, hanging fragments",
+        "catastrophic": "massive rupture zone filling the entire frame, torn structure, twisted fragments and loose stiff cables crossing the frame"
+      },
+      "negative_extra": "tiny pit, minor scratch, pristine intact panel, small pinhole, single small crater, one clean round hole only, spider-web glass cracks, fire glow, smoke plume, explosion flash, whole satellite visible, breach small in frame, distant view of the damage",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_radiator",
+        "surf_cfrp",
+        "surf_mli"
+      ],
+      "target_count": 400
+    },
+    {
+      "class_id": 12,
+      "label": "nominal",
+      "en_name": "Undamaged reference (control class)",
+      "positive_core": "close-up of a pristine undamaged satellite exterior surface, flawless uniform coating filling the entire frame edge to edge, immaculate clean material texture in razor sharp detail, intact surface as the only subject, absolutely no damage of any kind, factory-fresh surface finish, nothing else in the frame",
+      "severity": {
+        "none": ""
+      },
+      "negative_extra": "(crater:1.4), (hole:1.4), (crack:1.4), (tear:1.3), (dent:1.3), scratch, pit, puncture, damage, debris, deformation, stain, discoloration, whole satellite visible, full panel view",
+      "compatible_surfaces": [
+        "surf_al_panel",
+        "surf_mli",
+        "surf_solar",
+        "surf_radiator",
+        "surf_antenna",
+        "surf_cfrp",
+        "surf_whipple",
+        "surf_sensor",
+        "surf_harness"
+      ],
+      "target_count": 1500
+    }
+  ],
+  "surfaces": {
+    "surf_al_panel": "close-up of a white-painted aluminum satellite panel surface, matte thermal control coating texture with faint machining marks, at most the edge of a single rivet at the frame border",
+    "surf_mli": "close-up of gold kapton multi-layer insulation foil, fine wrinkles and crinkle texture, reflective metallic sheen, at most one stitched seam at the frame border",
+    "surf_solar": "close-up of a satellite solar cell surface, dark blue photovoltaic cell under cover glass with thin parallel silver gridlines, at most one cell edge at the frame border",
+    "surf_radiator": "close-up of a white optical solar reflector radiator tile, mirror-like quartz tile surface, at most one tile joint line at the frame border",
+    "surf_antenna": "close-up of a smooth pale composite antenna reflector skin, fine uniform surface texture",
+    "surf_cfrp": "close-up of a bare carbon fiber composite laminate, woven twill fiber texture, satin black finish",
+    "surf_whipple": "close-up of a thin bare aluminum Whipple shield bumper sheet, brushed metal texture",
+    "surf_sensor": "close-up of a star tracker optical window, glass aperture surface with the black anodized housing ring at the frame border",
+    "surf_harness": "close-up of a kapton-wrapped cable harness bundle, tightly wound amber tape texture and cable strands filling the frame"
+  },
+  "lighting": {
+    "light_direct": "harsh direct unfiltered sunlight, extreme contrast, pitch-black hard-edged shadows, no atmospheric scattering, blown specular highlights on bare metal",
+    "light_grazing": "grazing low-angle sunlight raking across the surface, terminator lighting, long micro-shadows inside craters and pits emphasizing depth relief",
+    "light_led": "eclipse darkness illuminated by a cool white LED inspection lamp, small specular hotspot on the damage, vignetted pool of light, surrounding pitch blackness",
+    "light_albedo": "soft bluish fill light reflected from Earth below, gentle earthshine illumination lifting the shadows",
+    "light_glint": "strong specular sun glint reflecting off the metallic surface, high dynamic range, bright star-shaped reflection right next to the damage"
+  },
+  "camera": {
+    "cam_micro": "microscope-level inspection view at sub-millimeter scale, material grain and machining marks clearly resolved, the subject occupying nearly the entire frame, flat top-down perspective, deep depth of field",
+    "cam_macro": "extreme macro lens close-up at millimeter scale, the subject filling most of the frame, top-down view, fine surface grain visible, deep depth of field",
+    "cam_close": "tight close-up from a few centimeters, the subject large, centered and filling more than half of the frame, slight perspective",
+    "cam_oblique": "oblique 45-degree macro close-up across the surface, camera very close to the panel, foreshortened relief on the subject which still fills the frame"
+  },
+  "backgrounds": {
+    "bg_fill": "the surface fills the frame completely edge to edge, no background visible at all",
+    "bg_edge_space": "only a thin sliver of pure black space visible along one edge of the frame, everything else is the surface",
+    "bg_vignette": "the surface fading into deep shadow at the frame corners, no scenery, no objects",
+    "bg_bokeh": "extreme background blur, a faint out-of-focus dark hardware bokeh in one corner of the frame, no recognizable objects"
+  },
+  "dataset_plan": {
+    "total_images": 10200,
+    "split": {
+      "train": 0.7,
+      "val": 0.2,
+      "test": 0.1
+    },
+    "diversity_rule": "cross lighting x camera x background x severity within each class; no single combination above 15% of a class; unique seed per image",
+    "real_data_note": "Mix real imagery (NASA LDEF crater archive, returned Hubble array photos, Sentinel-1A damage image, ISS inspection photos) into val/test to measure the sim-to-real gap",
+    "augmentation": [
+      "GaussNoise",
+      "ISONoise",
+      "salt-pepper hot pixels",
+      "MotionBlur",
+      "exposure jitter",
+      "ImageCompression"
+    ]
+  }
+}

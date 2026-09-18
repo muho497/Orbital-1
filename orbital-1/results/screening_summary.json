@@ -1,0 +1,1061 @@
+{
+ "output": {
+  "crater": {
+   "n": 1000,
+   "agree": 312,
+   "agree_frac": 0.312,
+   "hard_fail": 337,
+   "hard_fail_frac": 0.337,
+   "drift": 308,
+   "drift_frac": 0.308,
+   "retained": 294,
+   "retained_frac": 0.294,
+   "mean_own_sim": 0.2294,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "perforation",
+     401
+    ],
+    [
+     "nominal",
+     99
+    ],
+    [
+     "debris_spray",
+     65
+    ]
+   ],
+   "hard_modes": [
+    [
+     "person",
+     179
+    ],
+    [
+     "moon_terrain",
+     113
+    ],
+    [
+     "cartoon",
+     37
+    ]
+   ],
+   "drift_modes": [
+    [
+     "device",
+     174
+    ],
+    [
+     "plain_texture",
+     97
+    ]
+   ]
+  },
+  "perforation": {
+   "n": 800,
+   "agree": 614,
+   "agree_frac": 0.7675,
+   "hard_fail": 46,
+   "hard_fail_frac": 0.0575,
+   "drift": 64,
+   "drift_frac": 0.08,
+   "retained": 613,
+   "retained_frac": 0.7662,
+   "mean_own_sim": 0.2617,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "melt_splash",
+     35
+    ],
+    [
+     "debris_spray",
+     33
+    ],
+    [
+     "crater",
+     27
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     30
+    ],
+    [
+     "cartoon",
+     11
+    ],
+    [
+     "person",
+     4
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     53
+    ],
+    [
+     "device",
+     10
+    ]
+   ]
+  },
+  "petaling": {
+   "n": 600,
+   "agree": 430,
+   "agree_frac": 0.7167,
+   "hard_fail": 42,
+   "hard_fail_frac": 0.07,
+   "drift": 66,
+   "drift_frac": 0.11,
+   "retained": 416,
+   "retained_frac": 0.6933,
+   "mean_own_sim": 0.2418,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "perforation",
+     48
+    ],
+    [
+     "solar_damage",
+     31
+    ],
+    [
+     "nominal",
+     27
+    ]
+   ],
+   "hard_modes": [
+    [
+     "person",
+     18
+    ],
+    [
+     "cartoon",
+     9
+    ],
+    [
+     "flower",
+     8
+    ]
+   ],
+   "drift_modes": [
+    [
+     "device",
+     36
+    ],
+    [
+     "plain_texture",
+     27
+    ]
+   ]
+  },
+  "spallation": {
+   "n": 600,
+   "agree": 34,
+   "agree_frac": 0.0567,
+   "hard_fail": 181,
+   "hard_fail_frac": 0.3017,
+   "drift": 298,
+   "drift_frac": 0.4967,
+   "retained": 31,
+   "retained_frac": 0.0517,
+   "mean_own_sim": 0.2281,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "debris_spray",
+     126
+    ],
+    [
+     "melt_splash",
+     94
+    ],
+    [
+     "perforation",
+     88
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     141
+    ],
+    [
+     "cartoon",
+     21
+    ],
+    [
+     "person",
+     14
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     278
+    ],
+    [
+     "device",
+     17
+    ]
+   ]
+  },
+  "crack_web": {
+   "n": 800,
+   "agree": 192,
+   "agree_frac": 0.24,
+   "hard_fail": 227,
+   "hard_fail_frac": 0.2838,
+   "drift": 357,
+   "drift_frac": 0.4462,
+   "retained": 182,
+   "retained_frac": 0.2275,
+   "mean_own_sim": 0.2233,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "solar_damage",
+     166
+    ],
+    [
+     "melt_splash",
+     143
+    ],
+    [
+     "structural_severe",
+     79
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     154
+    ],
+    [
+     "cartoon",
+     41
+    ],
+    [
+     "person",
+     28
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     312
+    ],
+    [
+     "device",
+     35
+    ]
+   ]
+  },
+  "mli_damage": {
+   "n": 1000,
+   "agree": 554,
+   "agree_frac": 0.554,
+   "hard_fail": 132,
+   "hard_fail_frac": 0.132,
+   "drift": 190,
+   "drift_frac": 0.19,
+   "retained": 552,
+   "retained_frac": 0.552,
+   "mean_own_sim": 0.2308,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "nominal",
+     150
+    ],
+    [
+     "perforation",
+     96
+    ],
+    [
+     "melt_splash",
+     80
+    ]
+   ],
+   "hard_modes": [
+    [
+     "person",
+     83
+    ],
+    [
+     "moon_terrain",
+     34
+    ],
+    [
+     "cartoon",
+     13
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     101
+    ],
+    [
+     "device",
+     71
+    ]
+   ]
+  },
+  "solar_damage": {
+   "n": 1000,
+   "agree": 817,
+   "agree_frac": 0.817,
+   "hard_fail": 12,
+   "hard_fail_frac": 0.012,
+   "drift": 60,
+   "drift_frac": 0.06,
+   "retained": 816,
+   "retained_frac": 0.816,
+   "mean_own_sim": 0.2702,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "crack_web",
+     56
+    ],
+    [
+     "melt_splash",
+     35
+    ],
+    [
+     "structural_severe",
+     33
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     7
+    ],
+    [
+     "cartoon",
+     3
+    ],
+    [
+     "person",
+     1
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     58
+    ],
+    [
+     "device",
+     2
+    ]
+   ]
+  },
+  "debris_spray": {
+   "n": 600,
+   "agree": 209,
+   "agree_frac": 0.3483,
+   "hard_fail": 133,
+   "hard_fail_frac": 0.2217,
+   "drift": 199,
+   "drift_frac": 0.3317,
+   "retained": 193,
+   "retained_frac": 0.3217,
+   "mean_own_sim": 0.2477,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "crater",
+     136
+    ],
+    [
+     "perforation",
+     60
+    ],
+    [
+     "melt_splash",
+     60
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     100
+    ],
+    [
+     "person",
+     15
+    ],
+    [
+     "cartoon",
+     14
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     176
+    ],
+    [
+     "device",
+     17
+    ]
+   ]
+  },
+  "cfrp_delamination": {
+   "n": 600,
+   "agree": 165,
+   "agree_frac": 0.275,
+   "hard_fail": 186,
+   "hard_fail_frac": 0.31,
+   "drift": 395,
+   "drift_frac": 0.6583,
+   "retained": 157,
+   "retained_frac": 0.2617,
+   "mean_own_sim": 0.2077,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "melt_splash",
+     183
+    ],
+    [
+     "petaling",
+     49
+    ],
+    [
+     "perforation",
+     49
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     86
+    ],
+    [
+     "cartoon",
+     81
+    ],
+    [
+     "text_logo",
+     9
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     377
+    ],
+    [
+     "device",
+     16
+    ]
+   ]
+  },
+  "microcrater_field": {
+   "n": 800,
+   "agree": 43,
+   "agree_frac": 0.0537,
+   "hard_fail": 418,
+   "hard_fail_frac": 0.5225,
+   "drift": 528,
+   "drift_frac": 0.66,
+   "retained": 37,
+   "retained_frac": 0.0462,
+   "mean_own_sim": 0.2257,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "debris_spray",
+     326
+    ],
+    [
+     "melt_splash",
+     104
+    ],
+    [
+     "crater",
+     99
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     372
+    ],
+    [
+     "cartoon",
+     24
+    ],
+    [
+     "person",
+     17
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     505
+    ],
+    [
+     "device",
+     13
+    ]
+   ]
+  },
+  "melt_splash": {
+   "n": 500,
+   "agree": 64,
+   "agree_frac": 0.128,
+   "hard_fail": 202,
+   "hard_fail_frac": 0.404,
+   "drift": 225,
+   "drift_frac": 0.45,
+   "retained": 58,
+   "retained_frac": 0.116,
+   "mean_own_sim": 0.227,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "debris_spray",
+     91
+    ],
+    [
+     "crater",
+     84
+    ],
+    [
+     "perforation",
+     84
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     148
+    ],
+    [
+     "person",
+     45
+    ],
+    [
+     "cartoon",
+     8
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     162
+    ],
+    [
+     "device",
+     47
+    ]
+   ]
+  },
+  "structural_severe": {
+   "n": 400,
+   "agree": 203,
+   "agree_frac": 0.5075,
+   "hard_fail": 63,
+   "hard_fail_frac": 0.1575,
+   "drift": 85,
+   "drift_frac": 0.2125,
+   "retained": 203,
+   "retained_frac": 0.5075,
+   "mean_own_sim": 0.2302,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "nominal",
+     53
+    ],
+    [
+     "perforation",
+     34
+    ],
+    [
+     "solar_damage",
+     26
+    ]
+   ],
+   "hard_modes": [
+    [
+     "person",
+     41
+    ],
+    [
+     "moon_terrain",
+     17
+    ],
+    [
+     "cartoon",
+     4
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     39
+    ],
+    [
+     "whole_satellite",
+     23
+    ]
+   ]
+  },
+  "nominal": {
+   "n": 1500,
+   "agree": 714,
+   "agree_frac": 0.476,
+   "hard_fail": 138,
+   "hard_fail_frac": 0.092,
+   "drift": 117,
+   "drift_frac": 0.078,
+   "retained": 696,
+   "retained_frac": 0.464,
+   "mean_own_sim": 0.2272,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "perforation",
+     305
+    ],
+    [
+     "solar_damage",
+     166
+    ],
+    [
+     "structural_severe",
+     78
+    ]
+   ],
+   "hard_modes": [
+    [
+     "cartoon",
+     52
+    ],
+    [
+     "moon_terrain",
+     46
+    ],
+    [
+     "person",
+     35
+    ]
+   ],
+   "drift_modes": [
+    [
+     "device",
+     65
+    ],
+    [
+     "whole_satellite",
+     52
+    ]
+   ]
+  },
+  "_all": {
+   "n": 10200,
+   "agree_frac": 0.4266,
+   "hard_fail_frac": 0.2075,
+   "drift_frac": 0.2835,
+   "retained_frac": 0.4165
+  }
+ },
+ "output_v2": {
+  "crater": {
+   "n": 1000,
+   "agree": 76,
+   "agree_frac": 0.076,
+   "hard_fail": 681,
+   "hard_fail_frac": 0.681,
+   "drift": 756,
+   "drift_frac": 0.756,
+   "retained": 74,
+   "retained_frac": 0.074,
+   "mean_own_sim": 0.2137,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "melt_splash",
+     390
+    ],
+    [
+     "debris_spray",
+     252
+    ],
+    [
+     "perforation",
+     65
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     581
+    ],
+    [
+     "cartoon",
+     81
+    ],
+    [
+     "text_logo",
+     15
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     749
+    ],
+    [
+     "device",
+     7
+    ]
+   ]
+  },
+  "perforation": {
+   "n": 800,
+   "agree": 343,
+   "agree_frac": 0.4288,
+   "hard_fail": 161,
+   "hard_fail_frac": 0.2013,
+   "drift": 324,
+   "drift_frac": 0.405,
+   "retained": 339,
+   "retained_frac": 0.4238,
+   "mean_own_sim": 0.2203,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "melt_splash",
+     124
+    ],
+    [
+     "petaling",
+     110
+    ],
+    [
+     "debris_spray",
+     54
+    ]
+   ],
+   "hard_modes": [
+    [
+     "cartoon",
+     117
+    ],
+    [
+     "text_logo",
+     25
+    ],
+    [
+     "moon_terrain",
+     17
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     299
+    ],
+    [
+     "device",
+     25
+    ]
+   ]
+  },
+  "petaling": {
+   "n": 600,
+   "agree": 580,
+   "agree_frac": 0.9667,
+   "hard_fail": 370,
+   "hard_fail_frac": 0.6167,
+   "drift": 22,
+   "drift_frac": 0.0367,
+   "retained": 215,
+   "retained_frac": 0.3583,
+   "mean_own_sim": 0.2146,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "melt_splash",
+     6
+    ],
+    [
+     "mli_damage",
+     5
+    ],
+    [
+     "structural_severe",
+     4
+    ]
+   ],
+   "hard_modes": [
+    [
+     "flower",
+     361
+    ],
+    [
+     "cartoon",
+     9
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     22
+    ]
+   ]
+  },
+  "spallation": {
+   "n": 600,
+   "agree": 40,
+   "agree_frac": 0.0667,
+   "hard_fail": 210,
+   "hard_fail_frac": 0.35,
+   "drift": 536,
+   "drift_frac": 0.8933,
+   "retained": 35,
+   "retained_frac": 0.0583,
+   "mean_own_sim": 0.1993,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "melt_splash",
+     126
+    ],
+    [
+     "cfrp_delamination",
+     101
+    ],
+    [
+     "structural_severe",
+     81
+    ]
+   ],
+   "hard_modes": [
+    [
+     "cartoon",
+     115
+    ],
+    [
+     "moon_terrain",
+     76
+    ],
+    [
+     "text_logo",
+     17
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     535
+    ],
+    [
+     "device",
+     1
+    ]
+   ]
+  },
+  "crack_web": {
+   "n": 800,
+   "agree": 296,
+   "agree_frac": 0.37,
+   "hard_fail": 80,
+   "hard_fail_frac": 0.1,
+   "drift": 276,
+   "drift_frac": 0.345,
+   "retained": 293,
+   "retained_frac": 0.3663,
+   "mean_own_sim": 0.2325,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "solar_damage",
+     265
+    ],
+    [
+     "melt_splash",
+     88
+    ],
+    [
+     "structural_severe",
+     64
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     42
+    ],
+    [
+     "cartoon",
+     34
+    ],
+    [
+     "text_logo",
+     3
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     275
+    ],
+    [
+     "device",
+     1
+    ]
+   ]
+  },
+  "mli_damage": {
+   "n": 1000,
+   "agree": 604,
+   "agree_frac": 0.604,
+   "hard_fail": 90,
+   "hard_fail_frac": 0.09,
+   "drift": 270,
+   "drift_frac": 0.27,
+   "retained": 601,
+   "retained_frac": 0.601,
+   "mean_own_sim": 0.2189,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "petaling",
+     142
+    ],
+    [
+     "melt_splash",
+     101
+    ],
+    [
+     "perforation",
+     37
+    ]
+   ],
+   "hard_modes": [
+    [
+     "cartoon",
+     65
+    ],
+    [
+     "moon_terrain",
+     9
+    ],
+    [
+     "text_logo",
+     7
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     258
+    ],
+    [
+     "device",
+     12
+    ]
+   ]
+  },
+  "solar_damage": {
+   "n": 327,
+   "agree": 182,
+   "agree_frac": 0.5566,
+   "hard_fail": 12,
+   "hard_fail_frac": 0.0367,
+   "drift": 72,
+   "drift_frac": 0.2202,
+   "retained": 182,
+   "retained_frac": 0.5566,
+   "mean_own_sim": 0.2431,
+   "unreadable": 0,
+   "top_confusions": [
+    [
+     "crack_web",
+     67
+    ],
+    [
+     "cfrp_delamination",
+     25
+    ],
+    [
+     "melt_splash",
+     25
+    ]
+   ],
+   "hard_modes": [
+    [
+     "moon_terrain",
+     8
+    ],
+    [
+     "cartoon",
+     3
+    ],
+    [
+     "text_logo",
+     1
+    ]
+   ],
+   "drift_modes": [
+    [
+     "plain_texture",
+     72
+    ]
+   ]
+  },
+  "_all": {
+   "n": 5127,
+   "agree_frac": 0.4137,
+   "hard_fail_frac": 0.3129,
+   "drift_frac": 0.44,
+   "retained_frac": 0.3392
+  }
+ },
+ "_meta": {
+  "model": "ViT-L-14",
+  "pretrained": "openai",
+  "class_prompts": {
+   "crater": "a close-up photo of a hypervelocity impact crater with a raised molten rim on a spacecraft metal panel",
+   "perforation": "a close-up photo of a clean round hole punched through a spacecraft metal panel",
+   "petaling": "a close-up photo of a hole in thin sheet metal with jagged triangular metal petals bent outward",
+   "spallation": "a close-up photo of a circular patch of detached spalled material on the back of a spacecraft wall",
+   "crack_web": "a close-up photo of a spider web of radial and concentric cracks around an impact pit in a glass surface",
+   "mli_damage": "a close-up photo of a torn gold kapton multi-layer insulation blanket with a puncture exposing inner layers",
+   "solar_damage": "a close-up photo of shattered cover glass on a solar array with cracked photovoltaic cells",
+   "debris_spray": "a close-up photo of a dense cluster of many small impact pits sprayed over a spacecraft metal wall",
+   "cfrp_delamination": "a close-up photo of a delaminated carbon fiber composite panel with frayed broken fibers around a hole",
+   "microcrater_field": "a close-up photo of a satellite surface covered with dozens of tiny scattered micrometeoroid pits",
+   "melt_splash": "a close-up photo of a dark star-shaped melt splash deposit with radial rays around a small pit on a metal panel",
+   "structural_severe": "a photo of catastrophic damage to a satellite honeycomb panel with a torn facesheet exposing hexagonal core cells",
+   "nominal": "a photo of a pristine undamaged satellite exterior surface with intact coating and fasteners"
+  },
+  "hard_fail_prompts": {
+   "flower": "a photo of a flower",
+   "person": "a photo of a person or an astronaut",
+   "cartoon": "a cartoon illustration or a 3d render",
+   "text_logo": "a picture with text, a caption or a logo",
+   "moon_terrain": "a photo of the cratered surface of the Moon or a desert landscape"
+  },
+  "drift_prompts": {
+   "whole_satellite": "a photo of a whole satellite orbiting above the Earth",
+   "plain_texture": "a photo of a plain uniform surface texture with nothing on it",
+   "device": "a photo of a mechanical device or scientific instrument"
+  },
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER"
+ }
+}
